@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CareCoord - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Nurse_ayman.css" asp-append-version="true"/>
+    <!-- Font Awesome -->
+    @*<link rel="stylesheet"
+            href="~/dist/css/icons/font-awesome/css/fa-brands.min.css" />
+    <link rel="stylesheet"
+            href="~/dist/css/icons/font-awesome/css/fa-regular.min.css" />
+    <link rel="stylesheet"
+            href="~/dist/css/icons/font-awesome/css/fa-solid.min.css" />
+    <link rel="stylesheet"
+            href="~/dist/css/icons/font-awesome/css/fontawesome-all.min.css" />
+    <link rel="stylesheet"
+            href="~/dist/css/icons/font-awesome/css/all.min.css" />*@
+    <!-- font awesome Stylesheet -->
+    <link href="~/fontawesome-free-6.4.0-web/css/fontawesome.min.css" rel="stylesheet">
+     <link href="~/fontawesome-free-6.4.0-web/css/brands.css" rel="stylesheet">
+    <link href="~/fontawesome-free-6.4.0-web/css/solid.css" rel="stylesheet">
+    <link rel="icon" href="~/theme/images/favicon.ico" type="image/icon type" />
+    <link rel="stylesheet" href="~/css/bootstrap.css"/>
+    <link rel="stylesheet" href="~/theme/plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/theme/plugins/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="~/theme/plugins/slick-carousel/slick/slick.css" />
+            <link
+              rel="stylesheet"
+              href="~/theme/plugins/slick-carousel/slick/slick-theme.css"
+            />
+        
+            <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="~/theme/css/style.css" />
+</head>
+<body>
+
+@RenderBody()
+
+    <!-- footer Start -->
+    <footer class="footer section">
+        <div class="container">
+            <div class="footer-btm py-4 mt-2">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-12">
+                        <div class="copyright text-center">
+                            Copyright &copy; 2023
+                            <a href="#top">Before Others</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+@await RenderSectionAsync("Scripts", required:false)
+
+</body>
+</html>

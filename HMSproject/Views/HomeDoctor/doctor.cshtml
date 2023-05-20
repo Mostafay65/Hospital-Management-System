@@ -1,0 +1,69 @@
+@* @model TModel *@
+
+@{
+	ViewData["Title"] = "Dashboard";
+    Layout = "_LayoutDoctor";
+}
+    <style>
+		.bg-1 {
+			/*background-image: url("../Doctor/Images/22.jpg");*/
+			/*background-color: red;*/
+			background-size: cover;
+			position: relative;
+		}
+	</style>
+
+
+<!-- **firt page** -->
+<section class="page-title bg-1">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="block text-center">
+					<span class="text-white"></span>
+					<h1 class="text-capitalize">My Home</h1>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</section>
+<!-- ********************************************************************************************** -->
+
+<section class="information" id="About" style="background-color: whitesmoke;">
+	<h2 class="t"> Doctor Information</h2>
+	<div class="cards">
+
+		<div class="c">
+			<h2 class="title" style="color: white;">My Work</h2>
+			@* <i class="fa-solid fa-laptop-code"> </i> *@
+			<figure>
+				<a asp-controller="Work" asp-action="Work" >
+					<img src="~/Doctor/Images/syringe-solid.svg" height="100px" width="100px">
+				</a>
+               
+				<p class="info" style="color: white; margin-left:7%;" >You can start your work.</p>
+			</figure>
+		</div>
+
+
+		<div class="c">
+			<h2 class="title" style="color: white;">My Profile</h2>
+
+
+			@* <i class="fa-solid fa-laptop-code"> </i> *@
+			<figure>
+				<a asp-controller="Profile" asp-action="profile" >
+					<img src="~/Doctor/Images/user-solid (2).svg" height="100px" width="100px">
+				</a>
+				<p class="info" style="color: white; margin-left:8%">You can see your profile.</p>
+			</figure>
+
+
+		</div>
+	</div>
+</section>
+
+
+<a class="btn btn-slide-9" asp-controller="HomeDoctor" asp-action="Index" type="submit" style="background-color:black; margin-left: 85%; margin-top: 10%; color: white; ">Back &nbsp; <i style="color:white; margin:auto;" class="bi bi-arrow-bar-right"></i> </a>

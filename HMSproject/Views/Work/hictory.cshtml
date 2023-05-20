@@ -1,0 +1,80 @@
+﻿@using HMSproject.Models;
+@model List<Diagnose>
+@{
+    ViewData["Title"] = "Medical History";
+    Layout = "_LayoutDoctor";
+}
+<style>
+    /*.bg-1 {*/
+    /*    background-image: url("../Doctor/Images/22.jpg");*/
+    /*    background-size: cover;*/
+    /*    position: relative;*/
+    /*}*/
+</style>
+<section class="page-title bg-1">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block text-center">
+                    <span class="text-white"></span>
+                    <h1 class="text-capitalize mb-5 text-lg">Medical History</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ****************************************Medical History****************************************************** -->
+<section class="tab">
+    <div class="container">
+        @if (TempData["NoDiagnoses"] == "Oh oops! The patient hase no disgnoses")
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <strong>@TempData["NoDiagnoses"]</strong>
+            </div>
+        }
+        <div class="doctor-img-block">
+            <h2 style="color:black; font-style: normal;">Patient Medical History</h2>
+            <div class="table-wrapper">
+                <partial name="_Notification"/>
+                <table class="fl-table">
+                    <thead>
+                    <tr>
+
+                        <th> Description</th>
+                        <th> prescription</th>
+                        <th> Medical Analysis</th>
+                        <th> Date</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach (var diagnose in Model)
+                    {
+                        <tr>
+
+                            <td>@diagnose.Description</td>
+                            <td>@diagnose.Prescription</td>
+                            <td>@diagnose.Analysis</td>
+                            <td>@diagnose.Date </td>
+
+
+                        </tr>
+
+                    }
+
+
+                    <tbody>
+                </table>
+            </div>
+            <hr/>
+            <a class="btn btn-slide-9" asp-controller="Work" asp-action="patient" type="submit" style="background-color:black; margin-left: 85%; color: white; argin-top: 10%; ">Back &nbsp; <i style="color:white; margin:auto;" class="bi bi-arrow-bar-right"></i> </a>
+            <a class="btn btn-slide-9" asp-controller="Work" asp-action="work" type="submit" style="background-color:black; margin-right: 90%; color: white; argin-top: 8%; width:20%;">Work <i style="color:white; margin:auto;" class="bi bi-arrow-bar-right"></i> </a>
+
+
+        </div>
+    </div>
+</section>

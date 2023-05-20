@@ -1,0 +1,148 @@
+﻿@using HMSproject.Models;
+
+
+@{
+    var patients = ViewBag.Pat as List<Patient>;
+	ViewData["Title"] = "Appointments";
+    Layout = "_LayoutDoctor";
+}
+
+    <style>
+
+
+        .bg-1 {
+            background-image: url("../Doctor/Images/22.jpg");
+            background-size: cover;
+            position: relative;
+        }
+
+        select {
+            /* Reset Select */
+            appearance: none;
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+            /* Personalize */
+            flex: 1;
+            padding: 0 1em;
+            color: #fff;
+            background-color: var(--darkgray);
+            background-image: none;
+            cursor: pointer;
+        }
+            /* Remove IE arrow */
+            select::-ms-expand {
+                display: none;
+            }
+        /* Custom Select wrapper */
+        .select {
+            position: relative;
+            display: flex;
+            width: 20em;
+            height: 3em;
+            border-radius: .25em;
+            overflow: hidden;
+        }
+            /* Arrow */
+            .select::after {
+                content: '\25BC';
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 1em;
+                background-color: black;
+                transition: .25s all ease;
+                pointer-events: none;
+            }
+            /* Transition */
+            .select:hover::after {
+                color: white;
+            }
+
+        /* Other styles*/
+        body {
+            color: #fff;
+        }
+
+        h1 {
+            margin: 0 0 0.25em;
+        }
+
+        a {
+            font-weight: bold;
+            color: var(--gray);
+            text-decoration: none;
+            padding: .25em;
+            border-radius: .25em;
+            background: white;
+        }
+
+    </style>
+
+
+    <!-- ********************************************************************************************************** -->
+
+    <section class="page-title bg-1">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block text-center">
+                        <span class="text-white"></span>
+                        <h1 class="text-capitalize mb-5 text-lg">Patient Profile</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *********************************************************************************** -->
+    <section class="tab">
+        <div class="container">
+
+           
+            <div class="doctor-img-block">
+                <h2 style="color: black; font-style: normal;">Patient Data</h2>
+                <div class="table-wrapper">
+                    <table class="fl-table">
+                        
+                        <thead>
+                            <tr>
+                                <th>Patient Name</th>
+                                <th> Age</th>
+                                <th> Gander</th>
+                                <th>Phone</th>
+                                @*<th>Department</th>*@
+                                <th>Day</th>
+                                
+
+                                
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Patient in patients)
+                            {
+                                foreach(var appointment in Patient.Appointments)
+                                {
+                                    <tr>
+                                    <td>@Patient.Name</td>
+                                    <td>@Patient.Age</td>
+                                    <td>@Patient.Gender</td>
+                                    <td>@Patient.PhoneNumber</td>
+                                    @*<td>@appointment.Department.Name</td>*@
+                                    <td>@appointment.Day</td>
+                                    </tr>
+                                }
+                            }
+
+                        <tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr>
+    <a class="btn btn-slide-9" asp-controller="Work" asp-action="work" type="submit" style="background-color:black; margin-left: 85%; color: white; margin-top: 10%; ">Back &nbsp; <i style="color:white; margin:auto;" class="bi bi-arrow-bar-right"></i> </a>

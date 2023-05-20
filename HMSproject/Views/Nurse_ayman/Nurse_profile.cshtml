@@ -1,0 +1,88 @@
+@model Nurse
+
+@{
+    ViewBag.Title = "Nurse Profile";
+    Layout = "_Layout_Nurse_ayman";
+}
+
+<section class="page-title bg-1">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block text-center">
+              <span class="text-white">Patient Details</span><br/><br/>
+              <h1 class="text-capitalize mb-5 text-lg"> @Model.Name</h1>
+
+              <ul class="list-inline breadcumb-nav">
+                <li class="list-inline-item">
+                  <a asp-controller="Nurse_ayman" asp-action="Index" asp-route-id="@Model.Id" class="text-white">Home</a>
+                </li>
+                <li class="list-inline-item">
+                  <span class="text-white">/</span>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-white-50">Nurse Profile</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section doctor-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="doctor-img-block">
+          @{
+            <img src="~/images/ns/@Model.Image" alt=""id="profilePicture" class="img-fluid w-100"/>
+          }
+
+          <div class="info-block mt-4">
+            <h4 class="mb-0"> @Model.Name</h4>
+            <p> @Model.Email</p>
+
+            <ul class="list-inline mt-4 doctor-social-links">
+              <li class="list-inline-item">
+                <a href="#!"><i class="icofont-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="icofont-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="icofont-skype"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="icofont-linkedin"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="icofont-pinterest"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-md-6">
+        <div class="doctor-details mt-4 mt-lg-0">
+          <h2 class="text-md">About myself as a Nurse</h2>
+          <div class="divider my-4"></div>
+          <p style="font-size: 19px;
+                        line-height: 1.5;
+                        letter-spacing: 2px;
+                        font-weight: bold;">
+            Full Name : @Model.Name  <br/><br/>
+            Age : @Model.Age <br/><br/>
+            Gender : @Model.Gender <br/><br/>
+            Address : @Model.Address <br/><br/>
+            Email : @Model.Email<br/><br/>
+            Phone Number : @Model.Phone<br/><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
