@@ -2,7 +2,7 @@
 
 ## About the Project:
 
-- I developed a Web Application with my team at the colleage for Managing a whole hodpital system. The patient can make appointment from his home and then go to the hospital
+- I developed a Web Application with my team at the college for Managing a whole hospital system. The patient can make an appointment from his home and then go to the hospital
 
 
 - The biggest problem facing health care centres remains today. Technical problems. There is a rare health care centre that works with a modern and organised technical system that helps it organise the schedule, payment methods, save patient data, and communicate. So we were keen to find a solution to this problem, Through a Website that contains pages for the patient that enables him to record his data, book an appointment to visit the doctor, describe the pain, and view the doctor's data, pages for the nurse that enables her to confirm the patient's reservation and conduct medical tests, and pages for the doctor that enables him to view the patient's data, write his prescription, and show the medical history for the patient and pages for admin to control the whole system.
@@ -23,18 +23,17 @@
 
 ## Features:
 
-- [x] The patient can register to the system an create his account.
+- [x] The patient can register to the system and create his account.
 
 - [x] The patient can make an appointment from home.
 
-- [x] The system sent an email to the patient to confirm his email when he register and another email when he makes an appointment to tell him information about his appountment .
+- [x] The system sent an email to the patient to confirm his email when he register and another email when he makes an appointment to tell him information about his appointment.
 
 - [x] The project has an admin panel to have control over all doctors' and nurses' accounts, departments, and appointments.
 
 - [x] Doctor can write a medicine to the patient in the prescription.
 
 - [x] The patient can get that medicine from the pharmacy with the nurse.
-
 
 
 ## Setup
